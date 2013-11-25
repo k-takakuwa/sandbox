@@ -3,7 +3,7 @@
 int main(int argc, char **args) {
   int i = 0;
   for (; i < 10 ; i++) {
-    puts("Hello, world");
+    printf("Hello, world\n");
   }
 
   return 0;
