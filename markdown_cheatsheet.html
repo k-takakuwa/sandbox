@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 構文チートシート</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 2em;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 1em;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 1em;
+            margin-left: 0;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        .container {
+            border: 1px solid #e0e0e0;
+            padding: 1.5em;
+            margin-bottom: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Markdown 構文チートシート</h1>
+    <p>Markdownの基本的な構文をまとめたリファレンスです。</p>
+
+    <div class="container">
+        <h2>見出し (Headings)</h2>
+        <p><code>#</code>の数でレベルが変わります。<code>#</code>の後に半角スペースを入れます。</p>
+        <pre><code># 見出し1
+## 見出し2
+### 見出し3
+#### 見出し4</code></pre>
+        <h1>見出し1</h1>
+        <h2>見出し2</h2>
+        <h3>見出し3</h3>
+        <h4>見出し4</h4>
+    </div>
+
+    <div class="container">
+        <h2>段落と改行</h2>
+        <p>改行には1行の空行を挟むか、行末に半角スペースを2つ以上入れます。</p>
+        <pre><code>これは一つの段落です。
+
+これは新しい段落です。
+行末にスペースを2つ  
+入れると改行できます。</code></pre>
+        <p>これは一つの段落です。</p>
+        <p>これは新しい段落です。<br>行末にスペースを2つ<br>入れると改行できます。</p>
+    </div>
+
+    <div class="container">
+        <h2>強調 (Emphasis)</h2>
+        <p>太字は<code>**</code>または<code>__</code>、斜体は<code>*</code>または<code>_</code>で囲みます。</p>
+        <pre><code>**太字のテキスト**
+_斜体のテキスト_
+***太字と斜体のテキスト***</code></pre>
+        <p><strong>太字のテキスト</strong><br><em>斜体のテキスト</em><br><strong><em>太字と斜体のテキスト</em></strong></p>
+    </div>
+
+    <div class="container">
+        <h2>箇条書き (Lists)</h2>
+        <p>順序なしリストは<code>*</code>、順序付きリストは<code>1.</code>から始めます。</p>
+        <pre><code>* アイテム1
+* アイテム2
+    - サブアイテムa
+1. 最初のアイテム
+2. 次のアイテム</code></pre>
+        <ul>
+            <li>アイテム1</li>
+            <li>アイテム2
+                <ul>
+                    <li>サブアイテムa</li>
+                </ul>
+            </li>
+        </ul>
+        <ol>
+            <li>最初のアイテム</li>
+            <li>次のアイテム</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <h2>リンク (Links)</h2>
+        <p><code>[表示するテキスト](URL)</code>の形式で書きます。</p>
+        <pre><code>[Googleのウェブサイト](https://www.google.com)</code></pre>
+        <p><a href="https://www.google.com">Googleのウェブサイト</a></p>
+    </div>
+
+    <div class="container">
+        <h2>画像 (Images)</h2>
+        <p><code>![代替テキスト](画像URL)</code>の形式で、リンクと似ています。</p>
+        <pre><code>![Markdownロゴ](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)</code></pre>
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg" alt="Markdownロゴ" style="width:100px;"></p>
+    </div>
+
+    <div class="container">
+        <h2>コード (Code)</h2>
+        <p>インラインは<code>`</code>で、ブロックは<code>```</code>で囲みます。</p>
+        <pre><code>`git commit` コマンドを使います。
+
+```python
+def hello_world():
+    print("Hello, World!")
+```</code></pre>
+        <p><code>git commit</code> コマンドを使います。</p>
+        <pre><code class="language-python">def hello_world():
+    print("Hello, World!")</code></pre>
+    </div>
+
+    <div class="container">
+        <h2>引用 (Blockquotes)</h2>
+        <p>行頭に<code>></code>を付けます。</p>
+        <pre><code>> これは引用文です。
+> 別の行も同じブロックに含められます。</code></pre>
+        <blockquote>これは引用文です。<br>別の行も同じブロックに含められます。</blockquote>
+    </div>
+
+    <div class="container">
+        <h2>水平線 (Horizontal Rules)</h2>
+        <p><code>***</code>、<code>---</code>、<code>___</code> を単独の行に書きます。</p>
+        <pre><code>テキスト
+***
+別のテキスト</code></pre>
+        <p>テキスト</p>
+        <hr>
+        <p>別のテキスト</p>
+    </div>
+
+    <div class="container">
+        <h2>表 (Tables)</h2>
+        <p>ヘッダーとセルの区切りを<code>|</code>で、ヘッダーとボディの区切りを<code>---</code>で表現します。</p>
+        <pre><code>| ヘッダー1 | ヘッダー2 | ヘッダー3 |
+| :--- | :---: | ---: |
+| 左寄せ | 中央寄せ | 右寄せ |
+| 値1 | 値2 | 値3 |</code></pre>
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align:left;">ヘッダー1</th>
+                    <th style="text-align:center;">ヘッダー2</th>
+                    <th style="text-align:right;">ヘッダー3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left;">左寄せ</td>
+                    <td style="text-align:center;">中央寄せ</td>
+                    <td style="text-align:right;">右寄せ</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">値1</td>
+                    <td style="text-align:center;">値2</td>
+                    <td style="text-align:right;">値3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+
